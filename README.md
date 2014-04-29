@@ -1,2 +1,2 @@
-fluentconf2014
+FluentConf 2014 Demos
 ==============
