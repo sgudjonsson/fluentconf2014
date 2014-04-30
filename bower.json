@@ -1,0 +1,22 @@
+{
+  "name": "fluentconf2014",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sgudjonsson/fluentconf2014",
+  "authors": [
+    "Sigurbjörn Guðjónsson <sigurbjorn.gudjonsson@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "es6-module-loader": "~0.5.4",
+    "system.js": "~0.5.5",
+    "traceur": "~0.0.33"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fluentconf2014",
+  "version": "0.0.0",
+  "description": "FluentConf 2014 Demos\r ==============",
+  "main": "\"\"",
+  "dependencies": {
+    "express": "~4.1.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/sgudjonsson/fluentconf2014"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/sgudjonsson/fluentconf2014"
+}
