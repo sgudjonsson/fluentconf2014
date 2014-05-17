@@ -1,0 +1,49 @@
+<link rel="import" href="/bower_components/polymer/polymer.html" />
+
+<polymer-element name="e-mail" attributes="importance,from,subject" class="some-class-on-host">
+	<template>
+		<style>
+			.message { font-family: Consolas; width: 100%; display: block; float: left; clear: both; padding: 10px 0; border-bottom: solid 2px #ddd; }
+			.message.high { color: #f00;}
+			.from { display: block; float: left; width: 30%; }
+			.label { font-weight: bold; }
+			.subject { display: block; float: left; width: 60%; }
+		</style>
+		<div class="message {{importance}}" on-click="{{onMessageClick}}">
+			<span class="from">{{from}}</span>
+			<span class="subject">
+				<span class="label">Subject: </span>
+				<span class="text">{{subject}}</span>
+			</span>
+		</div>
+	</template>
+	<script>
+		(function() {
+			// private variable
+			var _foo = { bar: 42 };
+
+			Polymer("e-mail", {
+				created: function() { },
+				ready: function() { },
+				attached: function () { },
+				domReady: function() { },
+				detached: function() { },
+				attributeChanged: function(attrName, oldVal, newVal) { },
+
+				publish: {
+					importance: "",
+					from: "",
+					subject: ""
+				},
+				importance: "normal", // default property value
+				get foo() { return _foo; }, // expose a ES5 getter to _foo
+				onMessageClick: function(e, detail, sender) {
+					// do something when clicked...
+				},
+				importanceChanged: function(oldValue, newValue) {
+					// do something when the "importance" attribute changes
+				}
+			});
+		})();
+	</script>
+</polymer-element>

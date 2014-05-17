@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Custom elements and Shadow DOM</title>
+		<link rel="stylesheet" href="components-email.css" />
+		<script>
+
+		var EmailPrototype = Object.create(HTMLElement.prototype);
+
+		EmailPrototype.createdCallback = function() {
+			var shadow = this.createShadowRoot();
+			shadow.innerHTML = "<div class='message "+ this.getAttribute("importance") +"'>"+
+							   		"<span class='from'>"+ this.getAttribute("from") +"</span> "+
+							 		"<span class='subject'>"+
+								 		"<span class='label'>Subject: </span>"+
+								 		"<span class='text'>"+ this.getAttribute("subject") +"</span>"+ 
+							 		"</span>"+
+							 	"</div>";
+		};
+
+		document.registerElement("e-mail", {
+			prototype: EmailPrototype
+		});
+
+		</script>
+	</head>
+	<body>
+		<section id="inbox">
+			<e-mail from="tony@stark.com" subject="Need someone with mad JS skills" importance="high"></e-mail>
+			<e-mail from="obama@usa.gov" subject="healthcare.gov needs some work done"></e-mail>
+		</section>
+	</body>
+</html>

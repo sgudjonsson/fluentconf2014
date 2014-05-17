@@ -1,0 +1,23 @@
+<link rel="import" href="/bower_components/polymer/polymer.html" />
+
+<polymer-element name="e-mail" attributes="importance,from,subject">
+	<template>
+		<style>
+			.message { font-family: Consolas; width: 100%; display: block; float: left; clear: both; padding: 10px 0; border-bottom: solid 2px #ddd; }
+			.message.high { color: #f00;}
+			.from { display: block; float: left; width: 30%; }
+			.label { font-weight: bold; }
+			.subject { display: block; float: left; width: 60%; }
+		</style>
+		<div class="message {{importance}}">
+			<span class="from">{{from}}</span>
+			<span class="subject">
+				<span class="label">Subject: </span>
+				<span class="text">{{subject}}</span>
+			</span>
+		</div>
+	</template>
+	<script>
+		Polymer("e-mail");
+	</script>
+</polymer-element>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Custom elements and Shadow DOM with working styles</title>
+		<script>
+
+		var EmailPrototype = Object.create(HTMLElement.prototype);
+
+		EmailPrototype.createdCallback = function() {
+			var shadow = this.createShadowRoot();
+			shadow.innerHTML =  "<style>"+
+									".message { font-family: Consolas; width: 100%; display: block; float: left; clear: both; padding: 10px 0; border-bottom: solid 2px #ddd; }"+
+									".message.high { color: #f00;}"+
+									".from { display: block; float: left; width: 30%; }"+
+									".label { font-weight: bold; }"+
+									".subject { display: block; float: left; width: 60%; }"+
+								"</style>"+
+								"<div class='message "+ this.getAttribute("importance") +"'>"+
+							   		"<span class='from'>"+ this.getAttribute("from") +"</span> "+
+							 		"<span class='subject'>"+
+								 		"<span class='label'>Subject: </span>"+
+								 		"<span class='text'>"+ this.getAttribute("subject") +"</span>"+ 
+							 		"</span>"+
+							 	"</div>";
+		};
+
+		document.registerElement("e-mail", {
+			prototype: EmailPrototype
+		});
+
+		</script>
+		<style>
+			.section { float: left;}
+			.message { text-decoration: underline; float: left; font-size: 40px; font-family: serif; color: #CA9612; text-align: center; padding-top: 100px; width: 100%;}
+		</style>
+	</head>
+	<body>
+		<section id="inbox">
+			<e-mail from="tony@stark.com" subject="Need someone with mad JS skills" importance="high"></e-mail>
+			<e-mail from="obama@usa.gov" subject="healthcare.gov needs some work done"></e-mail>
+		</section>
+		<div class="message">$hadow DOM</div>
+	</body>
+</html>
