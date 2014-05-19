@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="/bower_components/react/react.js"></script>
+		<script src="/bower_components/react/JSXTransformer.js"></script>
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/jsx" src="react-inbox-component.js"></script>
+		<link rel="stylesheet" href="email.css" />
+	</head>
+	<body>
+		<section id="inbox"></section>
+		<script type="text/jsx">
+			/** @jsx React.DOM */
+			React.renderComponent(
+				<Inbox url="email.json" />,
+				document.getElementById("inbox")
+			);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+<section>
+	<div class="message {{email.importance}}" ng-repeat="email in emails track by email.id">
+		<span class="from">{{email.from}}</span>
+		<span class="subject">
+			<span class="label">Subject: </span>
+			<span class="text">{{email.subject}}</span>
+		</span>
+	</div>
+</section>

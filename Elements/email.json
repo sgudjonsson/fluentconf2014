@@ -1,0 +1,4 @@
+[
+	{ "id": "email-1", "from": "tony@stark.com", "subject": "Need someone with mad JS skills", "importance": "high"},
+	{ "id": "email-2", "from": "obama@usa.gov", "subject": "healthcare.gov needs some work done" }
+]

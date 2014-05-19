@@ -23,6 +23,8 @@
 			var _foo = { bar: 42 };
 
 			Polymer("e-mail", {
+
+				// Event callbacks
 				created: function() { },
 				ready: function() { },
 				attached: function () { },
@@ -30,19 +32,29 @@
 				detached: function() { },
 				attributeChanged: function(attrName, oldVal, newVal) { },
 
+				// Publish the attributes (properties) here as well
 				publish: {
 					importance: "",
 					from: "",
 					subject: ""
 				},
-				importance: "normal", // default property value
-				get foo() { return _foo; }, // expose a ES5 getter to _foo
+
+				// set property's default value
+				importance: "normal", 
+
+				// expose a ES5 getter for _foo
+				get foo() { return _foo; }, 
+
+				// define template functions
 				onMessageClick: function(e, detail, sender) {
 					// do something when clicked...
 				},
+
+				// property change event listener
 				importanceChanged: function(oldValue, newValue) {
 					// do something when the "importance" attribute changes
 				}
+				
 			});
 		})();
 	</script>
