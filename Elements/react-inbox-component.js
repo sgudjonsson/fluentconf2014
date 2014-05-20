@@ -38,6 +38,9 @@ var Inbox = React.createClass({
 	getInitialState: function() {
 		return { data: [] }
 	},
+	componentWillMount: function() {
+		this.loadEmails();
+	},
 	loadEmails: function() {
 		$.ajax({
 			url: this.props.url, 
@@ -46,9 +49,6 @@ var Inbox = React.createClass({
 				this.setState({data: data});
 			}.bind(this)
 		});
-	},
-	componentWillMount: function() {
-		this.loadEmails();
 	},
 	render: function() {
 		return (
